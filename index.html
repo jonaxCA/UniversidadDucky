@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Universidad Ducky</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+
+    <main class="login-wrapper">
+        <div class="login-card">
+            
+            <section class="login-left">
+                <div class="large-logo-container">
+                    <img src="https://via.placeholder.com/150/ffffff/0f3d24?text=Ducky+Logo" alt="Logo Universidad Ducky" class="large-logo">
+                </div>
+                
+                <div class="glass-panel">
+                    <h2>Empowering Academic Excellence</h2>
+                    <p>Secure access to Universidad Ducky's comprehensive library cataloguing and administrative tools. Built for speed, reliability, and precision.</p>
+                </div>
+            </section>
+
+            <section class="login-right">
+                <div class="brand-small">
+                    <div class="brand-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+                    <span class="brand-text">Universidad Ducky</span>
+                </div>
+
+                <div class="login-header">
+                    <h1>Admin Login</h1>
+                    <p>Enter your credentials to access the system.</p>
+                </div>
+
+                <form id="adminLoginForm">
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-user icon"></i>
+                            <input type="email" id="username" placeholder="admin@ducky.edu">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock icon"></i>
+                            <input type="password" id="password" placeholder="••••••••">
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="remember">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        Login to Dashboard <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+
+                <hr class="divider">
+
+                <div class="system-admin">
+                    <h3>SYSTEM ADMINISTRATION</h3>
+                    <div class="admin-buttons">
+                        <button class="btn-secondary"><i class="fa-solid fa-cloud-arrow-up"></i> Backup</button>
+                        <button class="btn-secondary"><i class="fa-solid fa-clock-rotate-left"></i> Restore</button>
+                    </div>
+                </div>
+
+                <div class="login-footer">
+                    <p>ISO 9001:2015 Compliant System</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
