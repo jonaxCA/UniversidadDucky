@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User - Universidad Ducky</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+
+    <header class="top-navbar">
+        <div class="logo-area">
+            <h2 class="text-logo"><i class="fa-solid fa-book-open-reader"></i> DUCKY <span>UNIVERSIDAD</span></h2>
+        </div>
+        <nav class="top-nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="catalogSettings.html">Catalog</a>
+            <a href="dashboard.html" class="active">Users</a>
+            <a href="#">Settings</a>
+        </nav>
+        <div class="user-profile">
+            <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="Admin Profile" class="avatar-img">
+        </div>
+    </header>
+
+    <main class="form-page-container">
+        
+        <div class="form-header-area">
+            <a href="dashboard.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to User List</a>
+            <h1>Create New User</h1>
+            <p>Register a new staff member or student to the library system.</p>
+        </div>
+
+        <div class="form-card">
+            <form id="createUserForm">
+                
+                <div class="form-section">
+                    <h3 class="section-title"><i class="fa-regular fa-user"></i> Personal Information</h3>
+                    <div class="input-grid full-width">
+                        <div class="input-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" class="base-input" placeholder="e.g. John Doe">
+                        </div>
+                    </div>
+                    <div class="input-grid 2-cols">
+                        <div class="input-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="base-input" placeholder="john.doe@university.edu">
+                        </div>
+                        <div class="input-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="text" id="phone" class="base-input" placeholder="+1 (555) 000-0000">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3 class="section-title"><i class="fa-solid fa-lock"></i> Account Details</h3>
+                    <div class="input-grid 2-cols">
+                        <div class="input-group">
+                            <label for="newUsername">Username</label>
+                            <input type="text" id="newUsername" class="base-input" placeholder="jdoe_admin">
+                        </div>
+                        <div class="input-group">
+                            <label for="newPassword">Password</label>
+                            <input type="password" id="newPassword" class="base-input" placeholder="••••••••">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="role-permission-grid">
+                    
+                    <div class="roles-column">
+                        <h3 class="section-title"><i class="fa-solid fa-id-badge"></i> Role Assignment</h3>
+                        
+                        <label class="role-card">
+                            <input type="radio" name="userRole" value="student" checked>
+                            <div class="role-content">
+                                <span class="role-custom-radio"></span>
+                                <div>
+                                    <h4>Student</h4>
+                                    <p>Standard library access & borrowing</p>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="role-card">
+                            <input type="radio" name="userRole" value="librarian">
+                            <div class="role-content">
+                                <span class="role-custom-radio"></span>
+                                <div>
+                                    <h4>Librarian</h4>
+                                    <p>Catalog management & user assistance</p>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="role-card">
+                            <input type="radio" name="userRole" value="admin">
+                            <div class="role-content">
+                                <span class="role-custom-radio"></span>
+                                <div>
+                                    <h4>System Admin</h4>
+                                    <p>Full control over users & configuration</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="permissions-column">
+                        <h3 class="section-title"><i class="fa-regular fa-circle-check"></i> Permissions</h3>
+                        
+                        <label class="permission-item" id="permCatalogWrap">
+                            <input type="checkbox" id="permCatalog">
+                            <div class="perm-content">
+                                <h4>Manage Catalog</h4>
+                                <p>Add, edit, or remove library assets.</p>
+                            </div>
+                        </label>
+
+                        <label class="permission-item" id="permUsersWrap">
+                            <input type="checkbox" id="permUsers">
+                            <div class="perm-content">
+                                <h4>Manage Users</h4>
+                                <p>Invite new members and edit roles.</p>
+                            </div>
+                        </label>
+
+                        <label class="permission-item" id="permReportsWrap">
+                            <input type="checkbox" id="permReports">
+                            <div class="perm-content">
+                                <h4>View Reports</h4>
+                                <p>Access analytics and borrowing history data.</p>
+                            </div>
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+                    <a href="dashboard.html" class="btn-cancel">Cancel</a>
+                    <button type="submit" class="btn-create">Create User</button>
+                </div>
+
+            </form>
+        </div>
+        
+        <p class="footer-note">An email invitation will be sent to the user upon creation.</p>
+    </main>
+
+    <script src="addUsers.js"></script>
+</body>
+</html>
