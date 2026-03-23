@@ -153,3 +153,81 @@
     <script src="addUsers.js"></script>
 </body>
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('createUserForm');
+    const roleRadios = document.querySelectorAll('input[name="userRole"]');
+    
+    const permCatalogWrap = document.getElementById('permCatalogWrap');
+    const permUsersWrap = document.getElementById('permUsersWrap');
+    const permReportsWrap = document.getElementById('permReportsWrap');
+
+    const chkCatalog = document.getElementById('permCatalog');
+    const chkUsers = document.getElementById('permUsers');
+    const chkReports = document.getElementById('permReports');
+
+    const updatePermissionsLogic = (role) => {
+        [chkCatalog, chkUsers, chkReports].forEach(chk => {
+            chk.disabled = false;
+        });
+        [permCatalogWrap, permUsersWrap, permReportsWrap].forEach(wrap => {
+            wrap.classList.remove('disabled');
+        });
+
+        if (role === 'student') {
+            [chkCatalog, chkUsers, chkReports].forEach(chk => {
+                chk.checked = false;
+                chk.disabled = true;
+            });
+            [permCatalogWrap, permUsersWrap, permReportsWrap].forEach(wrap => {
+                wrap.classList.add('disabled');
+            });
+        } 
+        else if (role === 'librarian') {
+            chkUsers.checked = false;
+            chkUsers.disabled = true;
+            permUsersWrap.classList.add('disabled');
+            
+            chkCatalog.checked = true; 
+        }
+        else if (role === 'admin') {
+            chkCatalog.checked = true;
+            chkUsers.checked = true;
+            chkReports.checked = true;
+        }
+    };
+
+    roleRadios.forEach(radio => {
+        radio.addEventListener('change', (e) => {
+            updatePermissionsLogic(e.target.value);
+        });
+    });
+
+    const initialRole = document.querySelector('input[name="userRole"]:checked').value;
+    updatePermissionsLogic(initialRole);
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const textInputs = form.querySelectorAll('.base-input');
+        let isValid = true;
+
+        textInputs.forEach(input => {
+            if (input.value.trim() === '') {
+                isValid = false;
+                input.style.borderColor = 'red';
+            } else {
+                input.style.borderColor = 'var(--border-color)';
+            }
+        });
+
+        if (!isValid) {
+            alert('Por favor, completa todas las credenciales antes de crear el usuario.');
+            return;
+        }
+
+        window.location.href = 'dashboard.html';
+    });
+});
+</script>
