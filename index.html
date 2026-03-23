@@ -87,3 +87,26 @@
     <script src="app.js"></script>
 </body>
 </html>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('adminLoginForm');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const userValue = usernameInput.value.trim();
+        const passValue = passwordInput.value.trim();
+
+        if (userValue === '' || passValue === '') {
+            alert('Por favor, ingresa tu usuario y contraseña.');
+            if (userValue === '') usernameInput.focus();
+            else passwordInput.focus();
+            return;
+        }
+        window.location.href = 'dashboard.html';
+    });
+});
+</script>
