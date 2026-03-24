@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog Management - Universidad Ducky</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+
+    <header class="top-navbar">
+        <div class="logo-area">
+            <h2 class="text-logo"><i class="fa-solid fa-book-open-reader"></i> DUCKY <span>UNIVERSIDAD</span></h2>
+        </div>
+        <nav class="top-nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="catalogSettings.html" class="active">Catalog</a>
+            <a href="dashboard.html">Users</a>
+            <a href="#">Settings</a>
+        </nav>
+        <div class="user-profile">
+            <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="Admin Profile" class="avatar-img">
+        </div>
+    </header>
+
+    <main class="catalog-container">
+        <div class="catalog-header">
+            <h1>Catalog Management</h1>
+            <p>Advanced Book Search and Administration (Sprint 1)</p>
+        </div>
+
+        <div class="catalog-layout">
+            
+            <div class="catalog-main-content">
+                
+                <div class="search-card">
+                    <div class="search-input-wrapper">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" id="bookSearchInput" placeholder="Search by Title, Author, or ISBN" autocomplete="off">
+                        <button class="btn-search">Search</button>
+
+                        <div class="search-dropdown" id="searchDropdown">
+                            <div class="dropdown-header">
+                                <i class="fa-regular fa-clock"></i> Recents
+                            </div>
+                            <ul class="dropdown-list">
+                                <li><span>Artificial Intelligence Stuart Russell</span> <i class="fa-solid fa-xmark"></i></li>
+                                <li><span>James Kurose Computer</span> <i class="fa-solid fa-xmark"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="search-filters" id="searchFilters">
+                        <div class="filter-group">
+                            <button class="filter-btn">Author <i class="fa-solid fa-caret-down"></i></button>
+                            <button class="filter-btn">Genre <i class="fa-solid fa-caret-down"></i></button>
+                            <button class="filter-btn">Location <i class="fa-solid fa-caret-down"></i></button>
+                        </div>
+                        <button class="clear-filters-btn"><i class="fa-solid fa-filter-circle-xmark"></i> Clear Filters</button>
+                    </div>
+
+                    <div class="search-results-text" id="searchResultsText" style="display: none;">
+                        <span id="resultCount">1 Result</span> - <span id="availableCount">1 Available</span>
+                    </div>
+                </div>
+
+                <div class="books-grid" id="booksGrid">
+                    
+                    <a href="bookInformation.html" class="book-card" data-title="the art of computer programming" data-author="donald e. knuth" data-isbn="9780201896831" data-status="available">
+                        <img src="https://m.media-amazon.com/images/I/410vJZbNXbL._SY445_SX342_.jpg" alt="Book Cover" class="book-cover">
+                        <div class="book-info">
+                            <div class="book-title-row">
+                                <h3 class="book-title">The Art of Computer...</h3>
+                                <span class="book-badge available"><span class="dot"></span> Available</span>
+                            </div>
+                            <p class="book-author">Donald E. Knuth</p>
+                            <div class="book-meta">
+                                <span><i class="fa-solid fa-barcode"></i> 9780201896831</span>
+                                <span><i class="fa-solid fa-location-dot"></i> Estoa</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="bookInformation.html" class="book-card" data-title="introduction to algorithms" data-author="thomas h. cormen" data-isbn="9780262033848" data-status="borrowed">
+                        <img src="https://m.media-amazon.com/images/I/41T0iBxY8FL._SY445_SX342_.jpg" alt="Book Cover" class="book-cover">
+                        <div class="book-info">
+                            <div class="book-title-row">
+                                <h3 class="book-title">Introduction to...</h3>
+                                <span class="book-badge borrowed"><span class="dot"></span> Borrowed</span>
+                            </div>
+                            <p class="book-author">Thomas H. Cormen</p>
+                            <div class="book-meta">
+                                <span><i class="fa-solid fa-barcode"></i> 9780262033848</span>
+                                <span><i class="fa-regular fa-calendar"></i> Due: Oct 24</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="bookInformation.html" class="book-card" data-title="computer networking" data-author="james f. kurose" data-isbn="9780132856201" data-status="available">
+                        <img src="https://m.media-amazon.com/images/I/41Xy1pA4wML._SY445_SX342_.jpg" alt="Book Cover" class="book-cover">
+                        <div class="book-info">
+                            <div class="book-title-row">
+                                <h3 class="book-title">Computer Networking</h3>
+                                <span class="book-badge available"><span class="dot"></span> Available</span>
+                            </div>
+                            <p class="book-author">James F. Kurose</p>
+                            <div class="book-meta">
+                                <span><i class="fa-solid fa-barcode"></i> 9780132856201</span>
+                                <span><i class="fa-solid fa-location-dot"></i> CCU</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="bookInformation.html" class="book-card" data-title="artificial intelligence" data-author="stuart russell" data-isbn="9780136042594" data-status="available">
+                        <img src="https://m.media-amazon.com/images/I/51rP2sX9L-L._SY445_SX342_.jpg" alt="Book Cover" class="book-cover">
+                        <div class="book-info">
+                            <div class="book-title-row">
+                                <h3 class="book-title">Artificial Intelligence</h3>
+                                <span class="book-badge available"><span class="dot"></span> Available</span>
+                            </div>
+                            <p class="book-author">Stuart Russell</p>
+                            <div class="book-meta">
+                                <span><i class="fa-solid fa-barcode"></i> 9780136042594</span>
+                                <span><i class="fa-solid fa-location-dot"></i> CCU</span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <aside class="catalog-sidebar">
+                
+                <div class="quick-actions-card">
+                    <h3>Quick Actions</h3>
+                    <p class="subtitle">Common administrative tasks</p>
+
+                    <div class="action-item">
+                        <div class="action-icon" style="color: #10b981; background: #ecfdf5;"><i class="fa-solid fa-square-plus"></i></div>
+                        <div class="action-text">
+                            <h4>New Acquisition Request</h4>
+                            <p>Request new materials</p>
+                        </div>
+                    </div>
+
+                    <div class="action-item">
+                        <div class="action-icon" style="color: #10b981; background: #ecfdf5;"><i class="fa-solid fa-paste"></i></div>
+                        <div class="action-text">
+                            <h4>Generate Bibliographic Card</h4>
+                            <p>Create standard catalog cards</p>
+                        </div>
+                    </div>
+
+                    <div class="action-item">
+                        <div class="action-icon" style="color: #10b981; background: #ecfdf5;"><i class="fa-solid fa-user-plus"></i></div>
+                        <div class="action-text">
+                            <h4>Register User</h4>
+                            <p>Add new library patron</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="system-status-card">
+                    <i class="fa-solid fa-circle-info status-icon"></i>
+                    <div>
+                        <h4>System Status</h4>
+                        <p>Catalog indexing is up to date. Last sync: 10 minutes ago.</p>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <script src="catalog.js"></script>
+</body>
+</html>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('bookSearchInput');
+    const searchDropdown = document.getElementById('searchDropdown');
+    const searchFilters = document.getElementById('searchFilters');
+    const searchResultsText = document.getElementById('searchResultsText');
+    const resultCountSpan = document.getElementById('resultCount');
+    const availableCountSpan = document.getElementById('availableCount');
+    
+    const bookCards = document.querySelectorAll('.book-card');
+
+    searchInput.addEventListener('focus', () => {
+        if (searchInput.value.trim() === '') {
+            searchDropdown.classList.add('show');
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.search-input-wrapper')) {
+            searchDropdown.classList.remove('show');
+        }
+    });
+
+    const recentItems = document.querySelectorAll('.dropdown-list li span');
+    recentItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            searchInput.value = e.target.textContent;
+            searchDropdown.classList.remove('show');
+            performSearch(); 
+        });
+    });
+
+    const performSearch = () => {
+        const query = searchInput.value.toLowerCase().trim();
+
+        if (query.length > 0) {
+            searchDropdown.classList.remove('show');
+            searchFilters.style.display = 'none';
+            searchResultsText.style.display = 'block';
+        } else {
+            searchFilters.style.display = 'flex';
+            searchResultsText.style.display = 'none';
+        }
+
+        let visibleCount = 0;
+        let availableCount = 0;
+
+        bookCards.forEach(card => {
+            const title = card.getAttribute('data-title');
+            const author = card.getAttribute('data-author');
+            const isbn = card.getAttribute('data-isbn');
+            const status = card.getAttribute('data-status');
+
+            if (title.includes(query) || author.includes(query) || isbn.includes(query)) {
+                card.style.display = 'flex'; // Mostrar
+                visibleCount++;
+                if (status === 'available') availableCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        resultCountSpan.textContent = `${visibleCount} Result${visibleCount !== 1 ? 's' : ''}`;
+        availableCountSpan.textContent = `${availableCount} Available`;
+    };
+
+    searchInput.addEventListener('input', performSearch);
+});
+</script>
