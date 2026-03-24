@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User - Universidad Ducky</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+
+    <header class="top-navbar">
+        <div class="logo-area">
+            <h2 class="text-logo"><i class="fa-solid fa-book-open-reader"></i> DUCKY <span>UNIVERSIDAD</span></h2>
+        </div>
+        <nav class="top-nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="catalogSettings.html">Catalog</a>
+            <a href="dashboard.html" class="active">Users</a>
+            <a href="#">Settings</a>
+        </nav>
+        <div class="user-profile">
+            <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="Admin Profile" class="avatar-img">
+        </div>
+    </header>
+
+    <main class="form-page-container edit-user-page">
+        
+        <div class="form-header-area">
+            <a href="dashboard.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Go Back</a>
+            <h1>Update User</h1>
+            <p>Modify account details and permissions for <strong>Ana Garcia</strong> (ID: #LIB-7742)</p>
+        </div>
+
+        <div class="form-card">
+            <form id="updateUserForm">
+                
+                <div class="form-section">
+                    <h3 class="section-title"><i class="fa-regular fa-user"></i> Personal Information</h3>
+                    <div class="input-grid full-width">
+                        <div class="input-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" class="base-input" value="Ana Garcia" disabled>
+                        </div>
+                    </div>
+                    <div class="input-grid 2-cols">
+                        <div class="input-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="base-input" value="ana.garcia@ducky.edu" disabled>
+                        </div>
+                        <div class="input-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="text" id="phone" class="base-input" value="+1 (555) 902-3341" disabled>
+                        </div>
+                    </div>
+                    <p class="edit-note">Contact information can only be updated via the User Profile page.</p>
+                </div>
+
+                <div class="form-section">
+                    <h3 class="section-title"><i class="fa-solid fa-lock"></i> Account Details</h3>
+                    <div class="input-grid 2-cols">
+                        <div class="input-group">
+                            <label for="newUsername">Username</label>
+                            <input type="text" id="newUsername" class="base-input" value="agarcia_admin">
+                        </div>
+                        <div class="input-group">
+                            <label for="newPassword">Password</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="newPassword" class="base-input" value="•••••••••••••••">
+                                <i class="fa-regular fa-eye icon-eye"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="role-permission-grid">
+                    
+                    <div class="roles-column">
+                        <h3 class="section-title"><i class="fa-solid fa-id-badge"></i> Role Assignment</h3>
+                        
+                        <label class="role-card">
+                            <input type="radio" name="userRole" value="student">
+                            <div class="role-content">
+                                <span class="role-custom-radio"></span>
+                                <div>
+                                    <h4>Student</h4>
+                                    <p>Standard library access & borrowing</p>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="role-card">
+                            <input type="radio" name="userRole" value="librarian" checked>
+                            <div class="role-content">
+                                <span class="role-custom-radio"></span>
+                                <div>
+                                    <h4>Librarian</h4>
+                                    <p>Catalog management & user assistance</p>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="role-card">
+                            <input type="radio" name="userRole" value="admin">
+                            <div class="role-content">
+                                <span class="role-custom-radio"></span>
+                                <div>
+                                    <h4>System Admin</h4>
+                                    <p>Full control over users & configuration</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="permissions-column">
+                        <h3 class="section-title"><i class="fa-regular fa-circle-check"></i> Permissions</h3>
+                        
+                        <label class="permission-item" id="permCatalogWrap">
+                            <input type="checkbox" id="permCatalog" checked>
+                            <div class="perm-content">
+                                <h4>Manage Catalog</h4>
+                                <p>Add, edit, or remove library assets.</p>
+                            </div>
+                        </label>
+
+                        <label class="permission-item" id="permUsersWrap">
+                            <input type="checkbox" id="permUsers">
+                            <div class="perm-content">
+                                <h4>Manage Users</h4>
+                                <p>Invite new members and edit roles.</p>
+                            </div>
+                        </label>
+
+                        <label class="permission-item" id="permReportsWrap">
+                            <input type="checkbox" id="permReports">
+                            <div class="perm-content">
+                                <h4>View Reports</h4>
+                                <p>Access analytics and borrowing history data.</p>
+                            </div>
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="form-section status-section">
+                    <h3 class="section-title"><i class="fa-solid fa-traffic-light"></i> Account Status</h3>
+                    <div class="status-options">
+                        <label class="status-btn" id="statusActiveBtn">
+                            <input type="radio" name="accountStatus" value="active" checked>
+                            <div class="status-content">
+                                <span class="status-dot green"></span>
+                                <div>
+                                    <h4>Active</h4>
+                                    <p>User is currently active</p>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="status-btn" id="statusInactiveBtn">
+                            <input type="radio" name="accountStatus" value="inactive">
+                            <div class="status-content">
+                                <span class="status-dot grey"></span>
+                                <div>
+                                    <h4>Inactive</h4>
+                                    <p>Deactivate the user, it can be reactivated later</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <a href="dashboard.html" class="btn-cancel">Cancel</a>
+                    <button type="submit" class="btn-save">Save Changes</button>
+                </div>
+
+            </form>
+        </div>
+        
+        <footer class="form-footer">
+            <p>&copy; 2026 Universidad Ducky. Library Administration Portal.</p>
+            <div class="footer-links">
+                <a href="#">Help Center</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">System Status</a>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal-overlay" id="deactivateModal">
+        <div class="modal-content">
+            <h2><i class="fa-solid fa-triangle-exclamation modal-warning-icon"></i> Do you really want to deactivate this user?</h2>
+            
+            <div class="user-deactivation-details">
+                <p><strong>User ID:</strong> 001442</p>
+                <p><strong>Name:</strong> Ana Garcia</p>
+                <p><strong>Last Name:</strong> Morales Sanchez</p>
+                <p><strong>Role:</strong> Librarian</p>
+            </div>
+
+            <p class="warning-text">WARNING: Deactivated users are NOT allowed to access the platform from their accounts and will receive a notification email informing about their status change.</p>
+
+            <div class="modal-actions">
+                <button class="btn-modal-cancel" id="cancelDeactivationBtn">Cancel</button>
+                <button class="btn-deactivate" id="confirmDeactivationBtn">Deactivate User</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="editUser.js"></script>
+</body>
+</html>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('updateUserForm');
+    const roleRadios = document.querySelectorAll('input[name="userRole"]');
+    
+    const permCatalogWrap = document.getElementById('permCatalogWrap');
+    const permUsersWrap = document.getElementById('permUsersWrap');
+    const permReportsWrap = document.getElementById('permReportsWrap');
+
+    const chkCatalog = document.getElementById('permCatalog');
+    const chkUsers = document.getElementById('permUsers');
+    const chkReports = document.getElementById('permReports');
+
+    const updatePermissionsLogic = (role) => {
+        [chkCatalog, chkUsers, chkReports].forEach(chk => {
+            chk.disabled = false;
+        });
+        [permCatalogWrap, permUsersWrap, permReportsWrap].forEach(wrap => {
+            wrap.classList.remove('disabled');
+        });
+
+        if (role === 'student') {
+            [chkCatalog, chkUsers, chkReports].forEach(chk => {
+                chk.checked = false;
+                chk.disabled = true;
+            });
+            [permCatalogWrap, permUsersWrap, permReportsWrap].forEach(wrap => {
+                wrap.classList.add('disabled');
+            });
+        } 
+        else if (role === 'librarian') {
+            chkUsers.checked = false;
+            chkUsers.disabled = true;
+            permUsersWrap.classList.add('disabled');
+            
+        }
+        else if (role === 'admin') {
+        }
+    };
+
+    roleRadios.forEach(radio => {
+        radio.addEventListener('change', (e) => {
+            updatePermissionsLogic(e.target.value);
+        });
+    });
+
+    const initialRole = document.querySelector('input[name="userRole"]:checked').value;
+    updatePermissionsLogic(initialRole);
+
+    const statusRadios = document.querySelectorAll('input[name="accountStatus"]');
+    const deactivateModal = document.getElementById('deactivateModal');
+    const cancelDeactivationBtn = document.getElementById('cancelDeactivationBtn');
+    const confirmDeactivationBtn = document.getElementById('confirmDeactivationBtn');
+    const statusActiveBtn = document.getElementById('statusActiveBtn');
+    const statusInactiveBtn = document.getElementById('statusInactiveBtn');
+    
+    const radioActive = statusActiveBtn.querySelector('input');
+    const radioInactive = statusInactiveBtn.querySelector('input');
+
+    let previousStatus = 'active';
+
+    statusRadios.forEach(radio => {
+        radio.addEventListener('change', (e) => {
+            const newStatus = e.target.value;
+
+            if (newStatus === 'inactive') {
+                deactivateModal.classList.add('open');
+            } else {
+                previousStatus = 'active';
+                statusInactiveBtn.classList.remove('inactive');
+            }
+        });
+    });
+
+    cancelDeactivationBtn.addEventListener('click', () => {
+        deactivateModal.classList.remove('open');
+        radioActive.checked = true;
+        statusInactiveBtn.classList.remove('inactive');
+    });
+
+    confirmDeactivationBtn.addEventListener('click', () => {
+        deactivateModal.classList.remove('open');
+        previousStatus = 'inactive';
+        
+        statusInactiveBtn.classList.add('inactive');
+    });
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const confirmSave = confirm('¿Deseas guardar los cambios realizados en el usuario?');
+
+        if (confirmSave) {
+            window.location.href = 'dashboard.html';
+        }
+    });
+
+});
+</script>
