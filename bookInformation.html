@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details - Universidad Ducky</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+
+    <header class="top-navbar">
+        <div class="logo-area">
+            <h2 class="text-logo"><i class="fa-solid fa-book-open-reader"></i> DUCKY <span>UNIVERSIDAD</span></h2>
+        </div>
+        <nav class="top-nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="catalogSettings.html" class="active">Catalog</a>
+            <a href="dashboard.html">Users</a>
+            <a href="#">Settings</a>
+        </nav>
+        <div class="user-profile">
+            <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="Admin Profile" class="avatar-img">
+        </div>
+    </header>
+
+    <main class="book-details-page">
+        
+        <div class="breadcrumb-nav">
+            <a href="catalogSettings.html" class="back-link">
+                <div class="back-icon-circle"><i class="fa-solid fa-arrow-left"></i></div>
+                Go Back
+            </a>
+            <span class="separator">/</span>
+            <span class="current-page">Book Details</span>
+        </div>
+
+        <div class="book-details-card">
+            
+            <div class="book-cover-section">
+                <img src="https://m.media-amazon.com/images/I/410vJZbNXbL._SY445_SX342_.jpg" alt="The Art of Computer Programming" class="large-book-cover">
+            </div>
+
+            <div class="book-info-section">
+                
+                <div class="info-header">
+                    <span class="book-badge available"><span class="dot"></span> Available</span>
+                    <a href="bookManagement.html" class="btn-edit-icon"><i class="fa-solid fa-pen"></i></a>
+                </div>
+
+                <h1 class="book-main-title">The Art of Computer Programming</h1>
+
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">ID</span>
+                        <span class="info-value">978-0201896831</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">GENRE</span>
+                        <span class="info-value">Computer Science / Algorithmics</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">LOCATION</span>
+                        <span class="info-value"><i class="fa-solid fa-location-dot location-icon"></i> Estoa - Level 3, Shelf B4</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">AUTHOR</span>
+                        <span class="info-value">John Doe</span>
+                    </div>
+                </div>
+
+                <div class="description-section">
+                    <span class="info-label">DESCRIPTION</span>
+                    <p class="description-text">
+                        This multivolume work is widely considered the bible of all fundamental algorithms and the standard reference for theoretical computer science. Knuth's work is celebrated for its rigor, clarity, and historical perspective.
+                    </p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">COPIES OWNED</span>
+                            <span class="stat-number">5</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                        </div>
+                        <span class="stat-footer-text">4 copies currently on shelf</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">TOTAL LOANS</span>
+                            <span class="stat-number">142</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 60%;"></div>
+                        </div>
+                        <span class="stat-footer-text">High demand item</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="simple-footer">
+        <p>&copy; 2026 Universidad Ducky - Library Administrative System</p>
+    </footer>
+
+</body>
+</html>
