@@ -152,3 +152,29 @@
     <script src="bookManagement.js"></script>
 </body>
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('bookManagementForm');
+    const btnDisable = document.getElementById('btnDisableBook');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const isConfirmed = confirm('¿Estás seguro de que deseas guardar los cambios en este libro?');
+        
+        if (isConfirmed) {
+            window.location.href = 'catalogSettings.html';
+        }
+    });
+
+    btnDisable.addEventListener('click', () => {
+        
+        const isConfirmed = confirm('WARNING: ¿Realmente deseas deshabilitar "The Art of Computer Programming"? \n\nEl libro dejará de estar disponible para los usuarios.');
+        
+        if (isConfirmed) {
+            window.location.href = 'catalogSettings.html';
+        }
+    });
+});
+</script>
