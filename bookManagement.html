@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Management - Universidad Ducky</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+
+    <header class="top-navbar">
+        <div class="logo-area">
+            <h2 class="text-logo"><i class="fa-solid fa-book-open-reader"></i> DUCKY <span>UNIVERSIDAD</span></h2>
+        </div>
+        <nav class="top-nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="catalogSettings.html" class="active">Catalog</a>
+            <a href="dashboard.html">Users</a>
+            <a href="#">Settings</a>
+        </nav>
+        <div class="user-profile">
+            <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="Admin Profile" class="avatar-img">
+        </div>
+    </header>
+
+    <main class="form-page-container edit-user-page">
+        
+        <div class="form-header-area">
+            <a href="catalogSettings.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Go Back</a>
+            <h1>Book information</h1>
+            <p>Make changes on registered books</p>
+        </div>
+
+        <div class="form-card">
+            <form id="bookManagementForm">
+                
+                <div class="form-section">
+                    <h3 class="section-title">Basic Information</h3>
+                    
+                    <div class="input-grid full-width">
+                        <div class="input-group">
+                            <label for="bookTitle">Book's Title</label>
+                            <input type="text" id="bookTitle" class="base-input" value="The Art of Computer Programming">
+                        </div>
+                    </div>
+                    
+                    <div class="input-grid 2-cols">
+                        <div class="input-group">
+                            <label for="bookAuthor">Author</label>
+                            <input type="text" id="bookAuthor" class="base-input" value="John Doe">
+                        </div>
+                        <div class="input-group">
+                            <label for="bookEditorial">Editorial</label>
+                            <input type="text" id="bookEditorial" class="base-input" value="Bloomburry Publishing">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3 class="section-title">Book's Details</h3>
+                    
+                    <div class="details-split-grid">
+                        <div class="details-left">
+                            <div class="input-group">
+                                <label for="bookYear">Year</label>
+                                <input type="number" id="bookYear" class="base-input" value="1997">
+                            </div>
+                            <div class="input-group">
+                                <label for="bookPrice">Unitarian Price</label>
+                                <input type="text" id="bookPrice" class="base-input" value="$349.99 MXN">
+                            </div>
+                        </div>
+                        
+                        <div class="details-right">
+                            <div class="input-group h-100">
+                                <label for="bookDescription">Description</label>
+                                <textarea id="bookDescription" class="base-input textarea-input">This multivolume work is widely considered the bible of all fundamental algorithms and the standard reference for theoretical computer science.&#10;Knuth's work is celebrated for its rigor, clarity, and historical perspective.</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3 class="section-title">Book's Location</h3>
+                    
+                    <div class="input-grid 2-cols">
+                        <div class="input-group">
+                            <label for="locLibrary">Library</label>
+                            <div class="select-wrapper">
+                                <select id="locLibrary" class="base-input select-input">
+                                    <option value="estoa" selected>Estoa</option>
+                                    <option value="ccu">CCU</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down select-icon"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="locUnits">Available Units</label>
+                            <div class="select-wrapper">
+                                <select id="locUnits" class="base-input select-input">
+                                    <option value="5" selected>5</option>
+                                    <option value="4">4</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down select-icon"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="locZone">Library Zone</label>
+                            <div class="select-wrapper">
+                                <select id="locZone" class="base-input select-input">
+                                    <option value="level3" selected>Level 3</option>
+                                    <option value="level2">Level 2</option>
+                                    <option value="level1">Level 1</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down select-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="locShelf">Shelf</label>
+                            <div class="select-wrapper">
+                                <select id="locShelf" class="base-input select-input">
+                                    <option value="b4" selected>B4</option>
+                                    <option value="b5">B5</option>
+                                    <option value="a1">A1</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down select-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions book-actions">
+                    <a href="catalogSettings.html" class="btn-cancel">Cancel</a>
+                    <div class="right-actions">
+                        <button type="button" class="btn-danger" id="btnDisableBook">Disable Book</button>
+                        <button type="submit" class="btn-save">Save Changes</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        
+        <p class="footer-note">A confirmation email will be sent to the user upon edit.</p>
+    </main>
+
+    <script src="bookManagement.js"></script>
+</body>
+</html>
