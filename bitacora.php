@@ -170,7 +170,7 @@ $accionColors = [
 
     <header class="top-navbar">
         <div class="logo-area">
-            <h2 class="text-logo"><i class="fa-solid fa-book-open-reader"></i> DUCKY <span>UNIVERSIDAD</span></h2>
+            <img src="images/duckyNav.jpeg" alt="Universidad Ducky" class="nav-logo">
         </div>
         <nav class="top-nav-links">
             <a href="dashboard.php">Dashboard</a>
