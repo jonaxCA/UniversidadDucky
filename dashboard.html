@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Universidad Ducky</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+
+    <header class="top-navbar">
+        <div class="logo-area">
+            <h2 class="text-logo"><i class="fa-solid fa-book-open-reader"></i> DUCKY <span>UNIVERSIDAD</span></h2>
+        </div>
+        <nav class="top-nav-links">
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="catalogSettings.html">Catalog</a>
+            <a href="#">Users</a>
+            <a href="#">Settings</a>
+        </nav>
+        <div class="user-profile">
+            <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="Admin Profile" class="avatar-img">
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div class="sidebar-titles">
+                    <h4>Uni Ducky Admin</h4>
+                    <p>Library System</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="dashboard.html" class="menu-item active">
+                    <i class="fa-solid fa-users"></i> User Management
+                </a>
+                <a href="catalogSettings.html" class="menu-item">
+                    <i class="fa-solid fa-book"></i> Books
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-sitemap"></i> Catalog
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-file-invoice"></i> Transactions
+                </a>
+                
+                <div class="menu-divider"></div>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-gear"></i> Settings
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <div>
+                    <h1>User Management</h1>
+                    <p>Manage system users, roles, and library permissions.</p>
+                </div>
+                <a href="addUsers.html" class="btn-primary btn-add">
+                    <i class="fa-solid fa-user-plus"></i> Add New User
+                </a>
+            </div>
+
+            <div class="table-card">
+                <div class="table-toolbar">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Filter users...">
+                    </div>
+                    <div class="filter-pills">
+                        <button class="pill active">All Roles</button>
+                        <button class="pill">Admin</button>
+                        <button class="pill">Librarian</button>
+                    </div>
+                </div>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>ROLE</th>
+                            <th>PERMISSIONS</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <span class="status-dot green"></span>
+                                    <div class="avatar-initials">AG</div>
+                                    <div class="user-info">
+                                        <span class="user-name">Ana Garcia</span>
+                                        <span class="user-email">ana.garcia@ducky.edu</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="role-badge badge-admin">Admin</span></td>
+                            <td>All Access</td>
+                            <td><a href="editUser.html" class="btn-edit"><i class="fa-solid fa-pen"></i> Edit User</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <span class="status-dot green"></span>
+                                    <div class="avatar-initials">JP</div>
+                                    <div class="user-info">
+                                        <span class="user-name">Juan Perez</span>
+                                        <span class="user-email">juan.perez@ducky.edu</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="role-badge badge-librarian">Librarian</span></td>
+                            <td>Manage Catalog</td>
+                            <td><a href="editUser.html" class="btn-edit"><i class="fa-solid fa-pen"></i> Edit User</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <span class="status-dot green"></span>
+                                    <div class="avatar-initials">ML</div>
+                                    <div class="user-info">
+                                        <span class="user-name">Maria Lopez</span>
+                                        <span class="user-email">m.lopez@ducky.edu</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="role-badge badge-professor">Professor</span></td>
+                            <td>Borrow, Reserve</td>
+                            <td><a href="editUser.html" class="btn-edit"><i class="fa-solid fa-pen"></i> Edit User</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <span class="status-dot red"></span>
+                                    <div class="avatar-initials" style="background: #fef3c7; color: #d97706;">CS</div>
+                                    <div class="user-info">
+                                        <span class="user-name">Carlos Silva</span>
+                                        <span class="user-email">csilva23@ducky.edu</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="role-badge badge-student">Student</span></td>
+                            <td>Borrow</td>
+                            <td><a href="editUser.html" class="btn-edit"><i class="fa-solid fa-pen"></i> Edit User</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="table-footer">
+                    <span class="showing-text">Showing 1 to 4 of 24 entries</span>
+                    <div class="pagination">
+                        <button class="page-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <span class="page-dots">...</span>
+                        <button class="page-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <button class="fab"><i class="fa-solid fa-scissors"></i></button>
+
+</body>
+</html>
